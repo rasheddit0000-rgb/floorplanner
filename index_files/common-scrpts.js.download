@@ -1,0 +1,53 @@
+window.onload = function () { // can also use window.addEventListener('load', (event) => {
+//     console.log('Page loaded');
+//     //social sharing divi
+// // Setup Function
+//     var $jq = jQuery.noConflict();
+//     $jq(document).ready(function () {
+//
+//         // Facebook
+//         var FB_share = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(document.URL) + "&t=" + encodeURIComponent(document.URL);
+//
+//         $jq('.fb-social-share').each(function () {
+//             this.href = FB_share;
+//         });
+//
+//         // Twitter Share
+//         var twitter_Share = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + ":%20 " + encodeURIComponent(document.URL);
+//
+//         $jq('.twitter-social-share').each(function () {
+//             this.href = twitter_Share;
+//         });
+//
+//         //Linkedin
+//         var Linkedin_Share = "http://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(document.URL) + "&title=" + encodeURIComponent(document.title);
+//         $jq('.linkedin-social-share').each(function () {
+//             this.href = Linkedin_Share;
+//         });
+//
+//         //Email
+//         var email_Share = "mailto:?subject=" + encodeURIComponent(document.title) + "&body=" + encodeURIComponent(document.URL);
+//         $jq('.email-social-share').each(function () {
+//             this.href = email_Share;
+//         });
+//     });
+    function funcSetAttrNewsletter() {
+        document.querySelector(".__trigger_newsletter_popup").setAttribute("data-target", "#mailchimpPopup");
+        document.querySelector(".__trigger_newsletter_popup").setAttribute("data-toggle", "modal");
+    }
+    funcSetAttrNewsletter();
+ };
+
+(function($) {
+$(document).ready(function(){
+    $( '._trigger_button' ).click(function() { return false; });
+    $("._trigger_button").click(function(){
+        $("._toggled_section").slideToggle("slow");
+    });
+});
+//fix flashing content on load
+var elm=document.getElementsByTagName("html")[0];
+elm.style.display="none";
+document.addEventListener("DOMContentLoaded",function(event) {elm.style.display="block"; });
+
+})( jQuery );
